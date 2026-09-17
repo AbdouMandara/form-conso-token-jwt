@@ -8,6 +8,7 @@ type User = {
 const userRequestToExterenalAPI = async (data : User )=>{
     const response = await api.post("/auth/login", data);
     console.log(response.data);
+    return response.data;
 }
 
 export default userRequestToExterenalAPI;
