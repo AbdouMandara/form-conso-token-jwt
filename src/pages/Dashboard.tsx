@@ -24,7 +24,7 @@ export default  function Dashboard(){
                 <a className="btn btn-ghost text-xl">LoginAbdou</a>
             </div>
             <div className="navbar-end">
-                <a className="btn">Deconnexion</a>
+                <a className="btn" href='/'>Deconnexion</a>
             </div>
         </div>
 
