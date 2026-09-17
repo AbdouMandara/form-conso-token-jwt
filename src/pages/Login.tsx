@@ -6,8 +6,8 @@ export default function Login(){
  const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(UserSchema),
     defaultValues: {
-      username: "",
-      password: ""
+      username: "sophiab",
+      password: "sophiabpass"
     }
   })
   const onSubmit = async (data: any) => {
@@ -21,6 +21,56 @@ export default function Login(){
   const path = window.location.pathname;
   return (
     <div className="h-screen w-screen flex items-center justify-center">
+        <div>
+            <p>Quelques identifiants de connexion</p>
+
+        <div className="overflow-x-auto">
+        <table className="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <th>1</th>
+                <td>emilys</td>
+                <td>emilyspass</td>
+            </tr>
+
+            <tr>
+                <th>2</th>
+                <td>michaelw</td>
+                <td>michaelwpass</td>
+            </tr>
+
+            <tr>
+                <th>3</th>
+                <td>sophiab</td>
+                <td>sophiabpass</td>
+            </tr>
+
+            <tr>
+                <th>4</th>
+                <td>jamesd</td>
+                <td>jamesdpass</td>
+            </tr>
+
+            <tr>
+                <th>5</th>
+                <td>emmaj</td>
+                <td>emmajpass</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+        
+
+            
+        </div>
       <form className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4" onSubmit={handleSubmit(onSubmit)}>
         {path === "/invalid_credentials" &&
             <p className="bg-red-500 text-white p-2 rounded-xl m-2">Nom d'utilisateur ou mot de passe incorrect</p>
