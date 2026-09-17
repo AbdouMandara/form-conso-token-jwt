@@ -1,78 +1,26 @@
-# React + TypeScript + Vite
+# Projet d’apprentissage : Authentification avec React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+J’ai réalisé une petite application pour mettre en pratique la gestion de l’authentification côté frontend.
+L’objectif était de comprendre concrètement le fonctionnement d’un login, la persistance de la session avec les cookies qui est plus safe.
 
-Currently, two official plugins are available:
+## Technologies utilisées :
+- React + TypeScript
+- Axios
+- React Hook Form
+- Zod
+- DaisyUI / Tailwind CSS
+- JWT & Cookies
+- API DummyJSON
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Acquis
 
-## React Compiler
+-Structurer les appels API avec Axios
+-Valider les formulaires avec Zod et React Hook Form
+- Comprendre le rôle des JWT et des cookies
+- Utiliser /auth/login et /auth/me
+- Comprendre le principe du refresh token et des interceptors Axios
+- Gérer les différents états d’une requête côté React
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Un petit projet, mais surtout une bonne occasion de mieux comprendre les bases de l’authentification moderne côté frontend.
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+![Image sur page](/public/Capture%20d’écran_2026-09-17_17-12-10.png)
