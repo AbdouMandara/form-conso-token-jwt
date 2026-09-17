@@ -1,7 +1,7 @@
 import api from "./axios";
 
 type User = {
-    email : string;
+    username : string;
     password : string;
 }
 
