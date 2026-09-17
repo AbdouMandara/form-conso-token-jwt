@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import UserSchema from "./schemas/dataForm.schema"
+import userRequestToExterenalAPI from "./api/userRequest"
 function App() {
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(UserSchema),
@@ -10,7 +11,7 @@ function App() {
     }
   })
   const onSubmit = (data: any) => {
-    console.log(data)
+    userRequestToExterenalAPI(data)
   }
 
   return (
