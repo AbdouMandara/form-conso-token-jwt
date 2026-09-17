@@ -10,12 +10,12 @@ export default  function Dashboard(){
                 const user = await userConnecte(); //j'ai await car sinon ca devrait me retourner une promesse et je ne pourrais pas acceder aux données de l'utilisateur
                 setUserFetched(user)
             } catch (error) {
+                window.location.replace("/");
                 console.error("Erreur lors de la récupération de l'utilisateur :", error)
             }
         }
         fetchUser();
     }, [])
-    const name = userFetched?.username || "Utilisateur inconnu"
 
     return (
         <>
@@ -32,7 +32,7 @@ export default  function Dashboard(){
             {userFetched ? (
                 <div className="flex justify-center items-center mt-6 w-screen gap-4 flex-col">
                     <h1>Quelques infos de l'utilisateur connecté</h1>
-                    <UserCard username={name} image={userFetched.image} firstname={userFetched.firstName} phone={userFetched.phone} />
+                    <UserCard username={userFetched.username} image={userFetched.image} firstname={userFetched.firstName} phone={userFetched.phone} lastname={userFetched.lastName} />
                 </div>
             ) : (
                 <p>Chargement...</p>
