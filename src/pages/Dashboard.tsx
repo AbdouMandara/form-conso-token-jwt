@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import userConnecte from "../api/userConnecte"
 import { type User } from "../types/userConnecte"
+import UserCard from "../components/UserCard"
 export default  function Dashboard(){
     const [userFetched, setUserFetched] = useState<User|null>(null)
     useEffect(()=>{
@@ -14,6 +15,8 @@ export default  function Dashboard(){
         }
         fetchUser();
     }, [])
+    const name = userFetched?.username || "Utilisateur inconnu"
+
     return (
         <>
         <div className="navbar bg-base-100 shadow-sm">
@@ -27,7 +30,10 @@ export default  function Dashboard(){
 
         <div>
             {userFetched ? (
-                <p>Bienvenue, {userFetched.firstName} {userFetched.lastName}!</p>
+                <div className="flex justify-center items-center mt-6 w-screen gap-4 flex-col">
+                    <h1>Quelques infos de l'utilisateur connecté</h1>
+                    <UserCard username={name} image={userFetched.image} firstname={userFetched.firstName} phone={userFetched.phone} />
+                </div>
             ) : (
                 <p>Chargement...</p>
             )}
