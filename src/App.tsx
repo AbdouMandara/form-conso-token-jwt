@@ -5,7 +5,7 @@ function App() {
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(UserSchema),
     defaultValues: {
-      email: "a",
+      email: "",
       password: ""
     }
   })
