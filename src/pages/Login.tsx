@@ -10,13 +10,21 @@ export default function Login(){
       password: ""
     }
   })
-  const onSubmit = (data: any) => {
-    userRequestToExterenalAPI(data)
+  const onSubmit = async (data: any) => {
+    try {
+        await userRequestToExterenalAPI(data);
+        window.location.replace("/dashboard");
+    } catch (error) {
+        window.location.replace("/invalid_credentials");
+    }
   }
-
+  const path = window.location.pathname;
   return (
     <div className="h-screen w-screen flex items-center justify-center">
       <form className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4" onSubmit={handleSubmit(onSubmit)}>
+        {path === "/invalid_credentials" &&
+            <p className="bg-red-500 text-white p-2 rounded-xl m-2">Nom d'utilisateur ou mot de passe incorrect</p>
+        }
         <legend className="fieldset-legend">Login</legend>
 
         <label className="label">Nom d'utilisateur</label>
